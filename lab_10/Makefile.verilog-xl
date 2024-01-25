@@ -1,0 +1,43 @@
+#   Resource path
+PROJ_PATH           = $(shell pwd)
+TEST_PATH           = ${PROJ_PATH}/test
+LIB_PATH            = ${PROJ_PATH}/libs
+RTL_PATH            = ${PROJ_PATH}/rtl
+SIM_PATH            = ${PROJ_PATH}/sim
+UTILS_PATH          = ${PROJ_PATH}/utils
+COMPILE_PATH        = ${PROJ_PATH}/sim/binary
+COV_PATH			= ${PROJ_PATH}/sim/coverage
+
+#   Test resource
+UVM_TEST_TOP        = spi_slv_top
+UVM_TESTNAME        = spi_slv_test_device_init
+UVM_TEST_PKG        = ${LIB_PATH}/vip_clkrst/vip_clkrst_pkg.sv
+UVM_TEST_PKG       += ${LIB_PATH}/vip_sig_mnt/vip_sig_mnt_pkg.sv
+UVM_TEST_PKG       += ${LIB_PATH}/vip_apb/vip_apb_pkg.sv
+UVM_TEST_PKG       += ${LIB_PATH}/vip_spi_mstr/vip_spi_mstr_pkg.sv
+UVM_TEST_PKG       += ${LIB_PATH}/common/lib_sva_pkg.sv
+UVM_TEST_PKG       += ${TEST_PATH}/spi_slv_pkg.sv
+UVM_VERBOSITY		= UVM_HIGH
+export UVM_TESTNAME
+export UVM_TEST_TOP
+
+#   Compilation switches
+compile_switches    = +libext+.v+.sv
+compile_switches   += +incdir+${TEST_PATH}
+compile_switches   += +incdir+${LIB_PATH}/vip_clkrst
+compile_switches   += +incdir+${LIB_PATH}/vip_sig_mnt
+compile_switches   += +incdir+${LIB_PATH}/vip_apb
+compile_switches   += +incdir+${LIB_PATH}/vip_spi_mstr
+compile_switches   += -y ${LIB_PATH}/vip_clkrst
+compile_switches   += -y ${LIB_PATH}/vip_sig_mnt
+compile_switches   += -y ${LIB_PATH}/vip_apb/vip_apb_intf
+compile_switches   += -y ${LIB_PATH}/vip_spi_mstr
+compile_switches   += -y ${RTL_PATH}
+compile_switches   += -v ${RTL_PATH}/std_reg_lib.sv
+
+#   Execute directory
+OUTPUT_PATH         = ${SIM_PATH}/${UVM_TESTNAME}
+
+#   Make targets
+clean:
+	rm -rf ${SIM_PATH}/*

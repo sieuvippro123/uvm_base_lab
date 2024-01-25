@@ -1,0 +1,36 @@
+include Makefile.verilog-xl
+
+#   Compilation switches
+compile_switches   += -64bit
+compile_switches   += -access +rw
+compile_switches   += -sv
+compile_switches   += -timescale '1ns/100ps'
+compile_switches   += -vtimescale '1ns/100ps'
+compile_switches   += -disable_sem2009
+
+#   UVM switches
+compile_switches   += -uvmhome CDNS-1.2
+
+#   Make targets
+sim: run
+
+compile:
+	mkdir -p ${COMPILE_PATH}
+	cd ${COMPILE_PATH}; \
+	xrun -c ${compile_switches} ${UVM_TEST_PKG} ${TEST_PATH}/${UVM_TEST_TOP}.sv
+
+run:
+	mkdir -p ${OUTPUT_PATH}
+	cd ${OUTPUT_PATH}; \
+	xrun ${compile_switches} ${UVM_TEST_PKG} ${TEST_PATH}/${UVM_TEST_TOP}.sv \
+	-logfile ${UVM_TESTNAME}.log +UVM_TESTNAME=${UVM_TESTNAME} -input ${UTILS_PATH}/dumpwave.xrun.tcl +UVM_VERBOSITY=$(UVM_VERBOSITY)
+
+gui:
+	mkdir -p ${OUTPUT_PATH}
+	cd ${OUTPUT_PATH}; \
+	xrun -gui ${compile_switches} ${UVM_TEST_PKG} ${TEST_PATH}/${UVM_TEST_TOP}.sv \
+	-logfile ${UVM_TESTNAME}.log +UVM_TESTNAME=${UVM_TESTNAME} -input ${UTILS_PATH}/dumpwave.xrun.tcl +UVM_VERBOSITY=$(UVM_VERBOSITY)
+
+wave:
+	cd ${OUTPUT_PATH}; \
+	simvision -64bit $(UVM_TESTNAME).shm

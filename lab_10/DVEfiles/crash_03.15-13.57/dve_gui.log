@@ -1,0 +1,169 @@
+Warning: [DVCDT136] 
+Failed to load tests. Details are as the following:
+Load Failed: 
+Warning-[UCAPI-SNF] Shape Not Found
+  'Fsm' coverage shape is not there in the vdb 
+  '/coasiasemi/home/sontd/uvm_academy_labs/lab_10/sim/coverage/spi_slv_test_device_init.vdb'.
+  Coverage of this metric will not be reported.
+  Please check if proper -cm option was used at compile time.
+The design '/coasiasemi/home/sontd/uvm_academy_labs/lab_10/sim/coverage/spi_slv_test_device_init.vdb' was loaded successfully.
+---------------------------------------------
+
+The tool has just detected a severe internal error:
+
+SEGV exception handled in internal functions.
+
+
+Release = 'Q-2020.03-1_Full64'  Architecture = 'linux64'  Program = 'DVE'
+
+'35217435 35252480 35254117 140586129638400 45870419 25028232 24947279 24981662 24981785 25328110 24190206 23720071 24890673 23802580 24890661 45736464 45239893 45240714 35720146 35524444 45101376 45731524 45485685 45224658 45552500 45552617 45735082 45239893 45240714 35720146 35524444 45101376 45731524 46505815 46506495 46513698 45736207 45239893 45240838 35720146 35524444 44938657 44932832 44991186 19645012 45307849 45307722 19643568 19374536 15341552 140586129556821'
+
+---------------------------------------------
+=======================DVE Context and Call Stack=========================
+Command line: /coasiasemi/eda_tool/Synopsys/vcs/Q-2020.03-1//gui/dve/linux64/bin/dve.exe -full64 -cov -dir /coasiasemi/home/sontd/uvm_academy_labs/lab_10/sim/coverage/spi_slv_test_device_init.vdb
+
+--- Stack trace follows:
+[New LWP 126557]
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib64/libthread_db.so.1".
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+0x00007fdcc25a34b9 in waitpid () from /lib64/libc.so.6
+
+Thread 2 (Thread 0x7fdcbcfed700 (LWP 126557)):
+#0  0x00007fdcc3d1ade2 in pthread_cond_timedwait@@GLIBC_2.3.2 () from /lib64/libpthread.so.0
+#1  0x0000000002b1ebeb in ?? ()
+#2  0x0000000002b1f07e in QThread::msleep(unsigned long) ()
+#3  0x0000000001278261 in ag::dveXThread::run() ()
+#4  0x0000000002b1ed7a in QThreadInstance::start(void*) ()
+#5  0x00007fdcc3d16ea5 in start_thread () from /lib64/libpthread.so.0
+#6  0x00007fdcc25dc96d in clone () from /lib64/libc.so.6
+
+Thread 1 (Thread 0x7fdcc62da640 (LWP 126168)):
+#0  0x00007fdcc25a34b9 in waitpid () from /lib64/libc.so.6
+#1  0x00007fdcc2520f62 in do_system () from /lib64/libc.so.6
+#2  0x00007fdcc2521311 in system () from /lib64/libc.so.6
+#3  0x00007fdcc5844efb in SNPSle_10ee25eff68cd8461c9146fa1d0b35e87067f3c8015b313e639d2928478c79b3f673f99203bcf8be64600612100082236bffb2007f1e0ef9 () from /coasiasemi/eda_tool/Synopsys/vcs/Q-2020.03-1//linux64/lib/liberrorinf.so
+#4  0x00007fdcc5845511 in SNPSle_10ee25eff68cd8461c9146fa1d0b35e87067f3c8015b313e81c34e9ac4c8988ef4a6e067b3aa9271e9f15440f9e8f69ebc77e2fd65860faa () from /coasiasemi/eda_tool/Synopsys/vcs/Q-2020.03-1//linux64/lib/liberrorinf.so
+#5  0x00007fdcc5846a9a in SNPSle_10ee25eff68cd8461c9146fa1d0b35e87067f3c8015b313efba706aab251478fa49e66610e453774633a6c152e7ef778f2202cda681f3d4e () from /coasiasemi/eda_tool/Synopsys/vcs/Q-2020.03-1//linux64/lib/liberrorinf.so
+#6  0x00007fdcc583f322 in SNPSle_d35ca1ff70d465c2b9b1a72eee90a50630165806651fae96eee2bdb18305df1f () from /coasiasemi/eda_tool/Synopsys/vcs/Q-2020.03-1//linux64/lib/liberrorinf.so
+#7  0x000000000219e8b9 in ag::logErrorMessage(ag::errorType, QString const&, bool) ()
+#8  0x000000000219ef65 in ?? ()
+#9  <signal handler called>
+#10 0x0000000002bdd8a8 in QTextParagraph::removeSelection(int) ()
+#11 0x0000000002bbed53 in QTextDocument::removeSelection(int) ()
+#12 0x00000000017de688 in ag::covEditor::setSelection(int, int, int, int, int) ()
+#13 0x00000000017caa4f in ag::covEditor::fillTextBlock(int, int, int, int, QColor, int, int) ()
+#14 0x00000000017d309e in ag::covEditor::fillRenderBlock(ag::renderBlock*) ()
+#15 0x00000000017d3119 in ag::covEditor::fillAllRenderBlocks() ()
+#16 0x00000000018279ee in ag::covInsertionMgr::displayValueAnnotation() ()
+#17 0x0000000001711cfe in ag::swInsertionMgr::updateValueAnnotation() ()
+#18 0x000000000169f087 in ag::swSubjEdit::updateValueAnnotation() ()
+#19 0x00000000017bcd31 in ag::covSubjEdit::updateValueAnnotation() ()
+#20 0x00000000016b32d4 in ag::swSubjEdit::resizeEvent(QResizeEvent*) ()
+#21 0x00000000017bcd25 in ag::covSubjEdit::resizeEvent(QResizeEvent*) ()
+#22 0x0000000002b9e210 in QWidget::event(QEvent*) ()
+#23 0x0000000002b24e55 in QApplication::internalNotify(QObject*, QEvent*) ()
+#24 0x0000000002b2518a in QApplication::notify(QObject*, QEvent*) ()
+#25 0x0000000002210bd2 in EkExtQtApp::notify(QObject*, QEvent*) ()
+#26 0x00000000021e0f5c in ag::baseQtApp::notify(QObject*, QEvent*) ()
+#27 0x0000000002b03140 in QWidget::internalSetGeometry(int, int, int, int, bool) ()
+#28 0x0000000002b9cec4 in QWidget::setGeometry(int, int, int, int) ()
+#29 0x0000000002b60e75 in QBoxLayout::setGeometry(QRect const&) ()
+#30 0x0000000002b212d2 in QLayout::eventFilter(QObject*, QEvent*) ()
+#31 0x0000000002b71374 in QObject::activate_filters(QEvent*) ()
+#32 0x0000000002b713e9 in QObject::event(QEvent*) ()
+#33 0x0000000002b9dcaa in QWidget::event(QEvent*) ()
+#34 0x0000000002b24e55 in QApplication::internalNotify(QObject*, QEvent*) ()
+#35 0x0000000002b2518a in QApplication::notify(QObject*, QEvent*) ()
+#36 0x0000000002210bd2 in EkExtQtApp::notify(QObject*, QEvent*) ()
+#37 0x00000000021e0f5c in ag::baseQtApp::notify(QObject*, QEvent*) ()
+#38 0x0000000002b03140 in QWidget::internalSetGeometry(int, int, int, int, bool) ()
+#39 0x0000000002b9cec4 in QWidget::setGeometry(int, int, int, int) ()
+#40 0x0000000002c59f57 in QSplitter::setGeo(QWidget*, int, int, bool) ()
+#41 0x0000000002c5a1ff in QSplitter::doMove(bool, int, int, int, bool, bool) ()
+#42 0x0000000002c5be22 in QSplitter::moveSplitter(int, int) ()
+#43 0x0000000002b9e10f in QWidget::event(QEvent*) ()
+#44 0x0000000002b24e55 in QApplication::internalNotify(QObject*, QEvent*) ()
+#45 0x0000000002b25206 in QApplication::notify(QObject*, QEvent*) ()
+#46 0x0000000002210bd2 in EkExtQtApp::notify(QObject*, QEvent*) ()
+#47 0x00000000021e0f5c in ag::baseQtApp::notify(QObject*, QEvent*) ()
+#48 0x0000000002adb5a1 in QETWidget::translateMouseEvent(_XEvent const*) ()
+#49 0x0000000002ad9ee0 in QApplication::x11ProcessEvent(_XEvent*) ()
+#50 0x0000000002ae82d2 in QEventLoop::processEvents(unsigned int) ()
+#51 0x00000000012bc254 in ag::ovaEventLoop::processEvents(unsigned int) ()
+#52 0x0000000002b357c9 in QEventLoop::enterLoop() ()
+#53 0x0000000002b3574a in QEventLoop::exec() ()
+#54 0x00000000012bbcb0 in run_cci_event_loop ()
+#55 0x000000000127a1c8 in ag::ovaAppInst::enterEventLoop(int, char**) ()
+#56 0x0000000000ea17f0 in main ()
+
+Process VmPeak: 388628 kb, VmSize: 337912 kb
+System Free Memory: 17423812 kb, System Free Swap: 86296172 kb
+
+No context available
+==========================================================================

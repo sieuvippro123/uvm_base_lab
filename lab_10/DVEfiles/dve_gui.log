@@ -1,0 +1,11 @@
+Warning: [DVCDT136] 
+Failed to load tests. Details are as the following:
+Load Failed: 
+Warning-[UCAPI-SNF] Shape Not Found
+  'Fsm' coverage shape is not there in the vdb 
+  '/coasiasemi/project/dv/uvm_academy_output/sontd/lab_10/sim/coverage/spi_slv_test_device_init.vdb'.
+  Coverage of this metric will not be reported.
+  Please check if proper -cm option was used at compile time.
+The design '/coasiasemi/project/dv/uvm_academy_output/sontd/lab_10/sim/coverage/spi_slv_test_device_init.vdb' was loaded successfully.
+Exclusion file '/coasiasemi/project/dv/uvm_academy_output/sontd/lab_10/all_exclusion.el' has been loaded successfully.
+All exclusions successfully imported and applied.

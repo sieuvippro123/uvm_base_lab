@@ -1,0 +1,45 @@
+include Makefile.verilog-xl
+
+#   Compilation switches
+compile_switches   += -full64
+compile_switches   += -debug_access+all
+compile_switches   += -sverilog
+compile_switches   += -timescale="1ns/100ps"
+
+#   UVM switches
+compile_switches   += -ntb_opts uvm-1.2
+
+#	Coverage switches
+cov_switch			= -cm line+cond+fsm+tgl+branch+assert
+
+#   Make targets
+sim: compile run
+
+simco: compile  runco
+
+compile:
+	mkdir -p ${COMPILE_PATH}
+	cd ${COMPILE_PATH}; \
+	vcs ${compile_switches} ${cov_switch} ${UVM_TEST_PKG} ${TEST_PATH}/${UVM_TEST_TOP}.sv ${RTL_PATH}/*.sv
+
+run:
+	mkdir -p ${OUTPUT_PATH}
+	cd ${OUTPUT_PATH}; \
+	${COMPILE_PATH}/simv -l ${UVM_TESTNAME}.log +UVM_TESTNAME=${UVM_TESTNAME} -ucli -i ${UTILS_PATH}/dumpwave.vcs.tcl
+
+runco:
+	mkdir -p ${OUTPUT_PATH}
+	mkdir -p ${COV_PATH}
+	cd ${OUTPUT_PATH}; \
+	${COMPILE_PATH}/simv -l ${UVM_TESTNAME}.log +UVM_TESTNAME=${UVM_TESTNAME} ${cov_switch} -ucli -i ${UTILS_PATH}/dumpwave.vcs.tcl; \
+	cp -rf ${COMPILE_PATH}/*.vdb ${COV_PATH}/${UVM_TESTNAME}.vdb;
+
+wave:
+	cd ${OUTPUT_PATH}; \
+	dve -full64 -vpd ${UVM_TESTNAME}.vpd
+
+cov:
+	dve -full64 -cov -dir ${COV_PATH}/*.vdb
+
+urg:
+	urg -dir ${COV_PATH}/*.vdb
